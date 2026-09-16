@@ -1,0 +1,116 @@
+---
+// PhilosophyStage.astro - Section 5: Philosophy & Testimonial Stage (Matches Ref Section 4)
+---
+
+<section class="relative bg-gradient-to-b from-[#E3EBE9] via-[#D8E4E0] to-[#E3EBE9] py-28 lg:py-36 overflow-hidden text-center">
+  <!-- Ambient Studio Lighting Effects -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-white/40 rounded-full blur-3xl pointer-events-none -z-0"></div>
+  
+  <div class="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
+    
+    <!-- Top Studio Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs font-mono text-[#1C2A30] mb-8 border border-white/80 shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span class="tracking-widest uppercase font-semibold">The LadeStack Manifesto</span>
+    </div>
+
+    <!-- Centered Editorial Serif Quote -->
+    <blockquote class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1C2A30] font-normal tracking-tight leading-[1.2] mb-10 max-w-4xl mx-auto">
+      &ldquo;Democratizing enterprise-grade AI tools so every solo builder has the leverage of a <span class="italic font-semibold">FAANG engineering team</span> &mdash; zero cost, zero gatekeeping.&rdquo;
+    </blockquote>
+
+    <!-- Attribution -->
+    <div class="flex flex-col items-center justify-center gap-2 mb-12">
+      <div class="font-serif text-xl sm:text-2xl font-semibold text-[#1C2A30] italic">
+        Girish Lade
+      </div>
+      <div class="text-xs font-semibold uppercase tracking-kicker text-[#52656B]">
+        Founder &amp; Architect &middot; LadeStack
+      </div>
+    </div>
+
+    <!-- Interactive Studio Pillars Switcher (Ref Section 4 Props Plinth) -->
+    <div class="glass-panel p-3 rounded-2xl max-w-2xl mx-auto shadow-pedestal border border-white/90">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-medium text-[#52656B]" id="manifesto-tabs">
+        <button class="manifesto-tab px-3 py-2.5 rounded-xl bg-[#1C2A30] text-white transition-all duration-300 font-semibold" data-target="m1">
+          Zero Cost
+        </button>
+        <button class="manifesto-tab px-3 py-2.5 rounded-xl hover:bg-white/80 hover:text-[#1C2A30] transition-all duration-300" data-target="m2">
+          Local Privacy
+        </button>
+        <button class="manifesto-tab px-3 py-2.5 rounded-xl hover:bg-white/80 hover:text-[#1C2A30] transition-all duration-300" data-target="m3">
+          WASM Speed
+        </button>
+        <button class="manifesto-tab px-3 py-2.5 rounded-xl hover:bg-white/80 hover:text-[#1C2A30] transition-all duration-300" data-target="m4">
+          Open Source
+        </button>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="p-4 text-xs sm:text-sm text-[#1C2A30] text-left pt-5 border-t border-[#D0DCD9]/50 mt-2">
+        <div id="m1" class="manifesto-content block">
+          <p class="leading-relaxed">
+            <strong class="font-semibold">Free Forever Guarantee:</strong> No credit cards, no tier limits, no artificial throttling. Advanced AI productivity belongs in the hands of students, creators, and independent engineers worldwide.
+          </p>
+        </div>
+        <div id="m2" class="manifesto-content hidden">
+          <p class="leading-relaxed">
+            <strong class="font-semibold">Pure Client-Side Architecture:</strong> By executing models and utilities directly in the browser, your proprietary source code, private documents, and files never leave your device.
+          </p>
+        </div>
+        <div id="m3" class="manifesto-content hidden">
+          <p class="leading-relaxed">
+            <strong class="font-semibold">Native Performance:</strong> Compiled via WebAssembly (C++/Rust) to provide near-instant processing times without waiting in server queues or paying cloud egress fees.
+          </p>
+        </div>
+        <div id="m4" class="manifesto-content hidden">
+          <p class="leading-relaxed">
+            <strong class="font-semibold">Built in the Open:</strong> Transparent architecture with modular extensions. Engineered by a passionate engineer to uplift the entire global software community.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centered Callout Button -->
+    <div class="mt-10">
+      <a 
+        href="https://ladestack.in" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-8 py-3.5 text-xs font-semibold tracking-wide text-[#1C2A30] bg-white hover:bg-[#F4F7F6] border border-[#D0DCD9] rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+      >
+        <span>Explore the Full Ecosystem at LadeStack.in</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Simple interactive manifesto tab switcher
+  const tabs = document.querySelectorAll('.manifesto-tab');
+  const panels = document.querySelectorAll('.manifesto-content');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Remove active classes
+      tabs.forEach((t) => {
+        t.classList.remove('bg-[#1C2A30]', 'text-white', 'font-semibold');
+        t.classList.add('hover:bg-white/80', 'hover:text-[#1C2A30]');
+      });
+      // Add active to current
+      tab.classList.add('bg-[#1C2A30]', 'text-white', 'font-semibold');
+      tab.classList.remove('hover:bg-white/80', 'hover:text-[#1C2A30]');
+
+      // Hide all panels
+      panels.forEach((p) => p.classList.add('hidden'));
+
+      // Show selected panel
+      const target = tab.getAttribute('data-target');
+      if (target) {
+        document.getElementById(target)?.classList.remove('hidden');
+      }
+    });
+  });
+</script>

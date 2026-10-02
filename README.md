@@ -1,80 +1,89 @@
-# 🚀 Astra Pro Portfolio
+# Astra Pro Portfolio
 
-A modern, high-impact web showcase and portfolio repository designed to highlight digital products, creative portfolios, and modern web experiences.
+A modern, high-impact web showcase and portfolio site built with **Astro** + **Tailwind CSS** — designed to highlight digital products, creative portfolios, and modern web experiences with premium visuals and fast performance.
 
----
+## ✨ Features
 
-## 🌟 Overview
+- 🎨 **Modern & aesthetic visuals** — premium hero designs and structured, conversion-focused layouts
+- 📱 **Fully responsive** — layouts and assets optimized across desktop, tablet, and mobile
+- ⚡ **Static & fast** — Astro static output (`output: 'static'`), zero-JS-by-default islands
+- 🧩 **Modular components** — Hero, Header, Footer, FeatureShowcase, ProductsMatrix, MetricsRibbon, EcosystemDual, PhilosophyStage
+- 🖼️ **Design assets included** — high-resolution hero banners and mockup screenshots (desktop + mobile)
 
-**Astra Pro Portfolio** provides visual design assets, architecture, and modular foundations for modern, responsive showcase websites. Engineered for speed, aesthetics, and user conversion, it empowers creators, developers, and businesses to present their work with high visual fidelity.
+## 🛠️ Tech Stack
 
----
+- [Astro](https://astro.build/) 5.x (static site output)
+- [Tailwind CSS](https://tailwindcss.com/) 3.4 + `@astrojs/tailwind` integration
+- `@tailwindcss/typography` for rich-text content styling
+- TypeScript via Astro client types (`astro/client` types reference in components)
 
-## ✨ Features & Highlights
-
-- 🎨 **Modern & Aesthetic Visuals**: Premium hero designs and structured layouts tailored for impact.
-- 📱 **Fully Responsive Ready**: Assets optimized across desktop, tablet, and mobile displays.
-- ⚡ **Optimized Performance**: High quality, lightweight image assets and clean repository structure.
-- 🛠️ **Developer Friendly**: Structured `.gitignore` configured for standard Node.js, modern web frameworks, and custom workflows.
-
----
-
-## 📁 Repository Structure
-
-```text
-astra-pro-portfolio/
-├── Créez un site web vitrine moderne et impactant pour valoriser votre activité.jpg  # Showcase banner asset
-├── verticle-hero-image.png                                                            # Vertical hero graphic
-├── .gitignore                                                                         # Git ignore configurations (including node_modules)
-└── README.md                                                                          # Project documentation
-```
-
----
-
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- [Git](https://git-scm.com/) installed on your machine
-- [Node.js](https://nodejs.org/) (optional, if extending with a web framework)
+- [Node.js](https://nodejs.org/) 18+ (20+ recommended)
+- npm (comes with Node.js)
 
-### Clone the Repository
+### Install & run
 
 ```bash
 git clone https://github.com/girishlade111/astra-pro-portfolio.git
 cd astra-pro-portfolio
+npm install
+npm run dev        # dev server with HMR
 ```
 
-### Setup & Usage
+### Build for production
 
-1. **Static / Framework Integration**: Incorporate the high-resolution hero banners and mockup assets directly into your frontend project (e.g. Next.js, React, Astro, or HTML/CSS).
-2. **Package Management**: If building a modern web application inside this repository:
-   ```bash
-   npm init -y
-   npm install
-   ```
-   *(Note: `node_modules/` is already pre-configured to be ignored by Git.)*
+```bash
+npm run build      # static output -> ./dist/
+npm run preview    # preview the production build locally
+```
 
----
+## 📁 Project Structure
 
-## 💡 Customization & Integration Guidelines
+```text
+astra-pro-portfolio/
+├── public/                     # static assets (served as-is)
+├── src/
+│   ├── components/             # Astro UI components
+│   │   ├── Header.astro        # site navigation
+│   │   ├── Hero.astro          # hero section
+│   │   ├── FeatureShowcase.astro
+│   │   ├── ProductsMatrix.astro
+│   │   ├── MetricsRibbon.astro
+│   │   ├── EcosystemDual.astro
+│   │   ├── PhilosophyStage.astro
+│   │   └── Footer.astro
+│   ├── layouts/Layout.astro    # base page layout (head, meta, slots)
+│   ├── pages/index.astro       # home page
+│   └── styles/global.css       # Tailwind + global styles
+├── astro.config.mjs            # Astro config (static output)
+├── tailwind.config.mjs         # Tailwind config
+└── implementation_plan.md      # original build plan notes
+```
 
-- **Hero Assets**: Replace or enhance `verticle-hero-image.png` with your personal or brand 3D/flat renders.
-- **Showcase Cards**: Utilize the showcase graphics for case studies, portfolio tiles, or client presentations.
+## 🌐 Deploy
 
----
+This is a fully static site — it deploys anywhere static hosting works:
+
+- **GitHub Pages**: the built `./dist/` output is published on the `gh-pages` branch
+- **Cloudflare Pages / Netlify / Vercel**: point the publish directory to `dist/` (build command: `npm run build`)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Contributions, issues, and feature requests are welcome:
 
----
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information (if applicable).
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+Built by [Girish Lade](https://ladestack.in) — part of the [LadeStack](https://ladestack.in) open-source family.
